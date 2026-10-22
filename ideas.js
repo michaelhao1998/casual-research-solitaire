@@ -2,7 +2,7 @@
 /* v4 第四章：机会检验。A传送带置首。规则按“组件/动作/判定/胜负/边界”写成可交付口径；示意图统一5:7牌比例，标注全部放进图例。 */
 window.RESEARCH_IDEAS=(()=>{
 const esc=s=>String(s??"").replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[x]));
-const KIND={fact:["原PPT设定","fact"],ana:["分析判断","ana"],hyp:["待验证","hyp"],cfg:["本方案设定","obs"]};
+const KIND={fact:["核心规则","fact"],ana:["分析判断","ana"],hyp:["待验证","hyp"],cfg:["原型默认值","obs"]};
 const tag=(t,c="")=>`<span class="dtag ${c}">${esc(t)}</span>`;
 const kind=k=>tag(KIND[k][0],KIND[k][1]);
 const sec=(id,no,kicker,title,lead,body)=>`<section class="deep-sec" id="${id}"><header class="deep-head"><span class="deep-no">${no}</span><div><span class="overline">${esc(kicker)}</span><h2>${title}</h2>${lead?`<p>${lead}</p>`:""}</div></header>${body}</section>`;
@@ -18,7 +18,7 @@ const marker=(x,y,n,c=COL.y)=>`<g><circle cx="${x}" cy="${y}" r="11" fill="#0f15
 const defs=`<defs>${[["ay",COL.y],["ap",COL.p],["am",COL.mute]].map(([id,c])=>`<marker id="${id}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="${c}"/></marker>`).join("")}</defs>`;
 const legend=(x,y,items,title="读图顺序")=>`<g><text x="${x}" y="${y}" ${FONT} font-size="11.5" fill="${COL.mute}" letter-spacing="1">${title}</text>${items.map(([n,a,b,c],i)=>`${marker(x+11,y+30+i*58,n,c||(n==="✕"?COL.r:COL.y))}<text x="${x+32}" y="${y+28+i*58}" font-size="13" fill="${COL.text}" font-weight="600">${a}</text><text x="${x+32}" y="${y+47+i*58}" font-size="11.5" fill="${COL.mute}">${b}</text>`).join("")}</g>`;
 
-/* ===== 图A：传送带结构图（数值与原PPT P15一致：红4/蓝7/绿2，带上5、9，占位2/6，待上带6） ===== */
+/* ===== 图A：传送带结构图 ===== */
 function conveyorAnatomy(){
  const cw=44,pw=56,L=210,R=630,TY=216,BY=356,RAD=70;
  const piles=[["r","4","红堆"],["b","7","蓝堆"],["g","2","绿堆"]],px=[260,420,580];
@@ -41,7 +41,7 @@ function conveyorAnatomy(){
  s+=`<text x="150" y="${BY+70}" font-size="11.5" fill="${COL.p}">入口</text>`;
  s+=marker(sx[0]+36,490,"1")+marker(R+RAD,BY-30,"2")+marker(px[0]+36,cy+10,"3")+marker(px[1]+80,cy+10,"✕",COL.r)+marker((L+R)/2+118,(TY+BY)/2+14,"4");
  s+=legend(790,34,[["1","点一张可用牌","它从入口进入传送带"],["2","带子顺时针转动","依次经过红、蓝、绿三堆"],["3","经过同色堆时判定","点数 = 堆顶 ±1 → 自动落堆"],["✕","判定不通过","继续绕圈，占用一个带位"],["4","带满 6 张且绕一圈","无任何落堆 → 本局失败"]]);
- s+=`<text x="790" y="356" font-size="11.5" fill="${COL.mute}">图中示例（数值取自原PPT P15）</text><text x="790" y="378" font-size="11.5" fill="${COL.text}">红5 → 红堆4：同色、差1，落堆</text><text x="790" y="398" font-size="11.5" fill="${COL.text}">蓝9 → 蓝堆7：差2，继续绕圈</text><text x="790" y="418" font-size="11.5" fill="${COL.p}">下一张该放红6：红堆变5后可接</text>`;
+ s+=`<text x="790" y="356" font-size="11.5" fill="${COL.mute}">图中示例</text><text x="790" y="378" font-size="11.5" fill="${COL.text}">红5 → 红堆4：同色、差1，落堆</text><text x="790" y="398" font-size="11.5" fill="${COL.text}">蓝9 → 蓝堆7：差2，继续绕圈</text><text x="790" y="418" font-size="11.5" fill="${COL.p}">下一张该放红6：红堆变5后可接</text>`;
  return s+`</svg>`;
 }
 
@@ -95,16 +95,16 @@ function treasureBoard(){
 /* ======================= 页面：A 传送带 ======================= */
 function conveyorPage(){
  return `<div class="classic-breadcrumb"><a href="#opportunities">机会检验</a><span>/</span>机会A · 传送带 × ±1</div>
- <header class="game-hero"><div class="gh-copy"><div class="gh-tags">${tag("优先验证 · 第一位","role")}${tag("动态Sort × Solitaire")}${tag("原PPT P15右")}</div><h1>循环传送带 × ±1 归堆</h1><p class="gh-thesis">把动态Sort的“投放顺序”与Solitaire的“±1接龙”接在一起：玩家只决定先放哪张牌，归堆由带子自动判定。顺序放对会连锁归堆，放早了就占住带上的位置。</p>
+ <header class="game-hero"><div class="gh-copy"><div class="gh-tags">${tag("优先验证 · 第一位","role")}${tag("动态Sort × Solitaire")}</div><h1>循环传送带 × ±1 归堆</h1><p class="gh-thesis">把动态Sort的“投放顺序”与Solitaire的“±1接龙”接在一起：玩家只决定先放哪张牌，归堆由带子自动判定。顺序放对会连锁归堆，放早了就占住带上的位置。</p>
  <div class="gh-switch"><a class="active" href="#idea/conveyor">A · 传送带</a><a href="#idea/treasure">B · 取宝物</a><a href="#idea/more">C · 其他</a></div></div>
  <div class="gh-data"><div class="data-strip"><b>一句话规则</b><span>同色、且与堆顶相差 1，才能归堆；接不上的牌留在带上绕圈占位。带子堵死即输，全部归堆即赢。</span></div></div></header>
  ${toc([["c-view","结构图"],["c-spec","规则说明书"],["c-step","一回合分步"],["c-fail","失败与预警"],["c-param","关卡参数"],["c-dec","新增决策"],["c-var","两个版本"],["c-risk","风险与否决"],["c-test","最小验证"]])}
- ${sec("c-view","01","ANATOMY","结构图：三个区域，一条判定规则","按序号阅读；文字说明集中在右侧图例，图上只保留牌、带子与箭头。",`<figure class="idea-fig">${conveyorAnatomy()}<figcaption>构造示意，非实录；堆顶、带上牌与占位数取自原PPT P15示例。参考产品 Solitaire Out: Color Flow 原版不按±1，±1为本研究的融合设想。</figcaption></figure>`)}
- ${sec("c-spec","02","RULE SPEC","规则说明书","按程序可实现的口径写；“本方案设定”是为第一版原型拍板的默认值，可在参数表中调整。",`<table class="spec"><thead><tr><th>模块</th><th>规则</th><th>来源</th></tr></thead><tbody>
+ ${sec("c-view","01","ANATOMY","结构图：三个区域，一条判定规则","按序号阅读；文字说明集中在右侧图例，图上只保留牌、带子与箭头。",`<figure class="idea-fig">${conveyorAnatomy()}<figcaption>构造示意，非实录；堆顶、带上牌与占位数为示例。参考产品 Solitaire Out: Color Flow 原版不按±1，±1为本研究的融合设想。</figcaption></figure>`)}
+ ${sec("c-spec","02","RULE SPEC","规则说明书","按程序可实现的口径写；“原型默认值”是为第一版原型拍板的取值，可在参数表中调整。",`<table class="spec"><thead><tr><th>模块</th><th>规则</th><th>来源</th></tr></thead><tbody>
  <tr><td>牌</td><td>只有「颜色」「点数」两个属性；颜色 3 种（红/蓝/绿），点数 A–K</td><td>${kind("cfg")}</td></tr>
  <tr><td>归堆区</td><td>3 堆，每堆只接收一种颜色；开局各有一张起始堆顶（关卡配置）</td><td>${kind("fact")}</td></tr>
  <tr><td>归堆条件</td><td>颜色相同 且 点数 = 堆顶 ± 1；落堆后该牌成为新堆顶</td><td>${kind("fact")}</td></tr>
- <tr><td>传送带</td><td>环形，容量 6（取自原PPT示例）；带上的牌顺时针依次经过红、蓝、绿三堆，经过时自动判定</td><td>${kind("cfg")}</td></tr>
+ <tr><td>传送带</td><td>环形，容量 6；带上的牌顺时针依次经过红、蓝、绿三堆，经过时自动判定</td><td>${kind("cfg")}</td></tr>
  <tr><td>出牌区</td><td>若干列牌，每列只有最上面一张可点，点走后下一张翻开</td><td>${kind("cfg")}</td></tr>
  <tr><td>玩家动作</td><td>唯一动作：点一张可用牌，投放到传送带入口；入口被占时不能投放</td><td>${kind("cfg")}</td></tr>
  <tr><td>连锁</td><td>堆顶改变后，带上已有的牌下次经过时按新堆顶重新判定（红5落堆后，红6即可接上）</td><td>${kind("fact")}</td></tr>
@@ -128,7 +128,7 @@ function conveyorPage(){
  <article>${kind("ana")}<h4>放还是等：带位就是预算</h4><p>6 个带位等于 6 次“放早了”的额度。每放一张不能立即落堆的牌，都在消耗缓冲。</p></article>
  <article>${kind("ana")}<h4>挖哪一列：揭牌换信息</h4><p>出牌区每列只露一张；先点哪列决定下一张翻出什么，保留 TriPeaks 的揭牌乐趣。</p></article>
  <article>${kind("hyp")}<h4>待验证：会不会退化成“能落就放”</h4><p>若多数局面只有一张可立即落堆的牌，决策就消失了。关卡需保证至少两张可选、且结果不同。</p></article></div>`)}
- ${sec("c-var","07","VARIANTS","两个版本：只差“谁推动时间”","原PPT建议第一版无计时、慢速；先做 B1 验证策略价值，再做 B2 验证节奏感。",`<table class="mini-table"><thead><tr><th>版本</th><th>传送带何时转动</th><th>压力来源</th><th>要测的问题</th></tr></thead><tbody>
+ ${sec("c-var","07","VARIANTS","两个版本：只差“谁推动时间”","第一版建议无计时、慢速；先做 B1 验证策略价值，再做 B2 验证节奏感。",`<table class="mini-table"><thead><tr><th>版本</th><th>传送带何时转动</th><th>压力来源</th><th>要测的问题</th></tr></thead><tbody>
  <tr><td><b>B1 回合制</b></td><td>每投放一张，带子转一整圈并结算所有落堆，然后停下等待</td><td>带位预算</td><td>玩家是否会倒推顺序？失败能否被指出？</td></tr>
  <tr><td><b>B2 实时</b></td><td>持续转动（建议 4 秒/圈），入口空时随时可投</td><td>带位 + 时间</td><td>等待与堵带会不会压过连锁的爽感？</td></tr></tbody></table>`)}
  ${sec("c-risk","08","RISK","风险与否决条件","先写清楚放弃条件，避免方向变成“必须成立”。",`<div class="cost-grid">
@@ -143,7 +143,7 @@ function conveyorPage(){
 /* ======================= 页面：B 取宝物 ======================= */
 function treasurePage(){
  return `<div class="classic-breadcrumb"><a href="#opportunities">机会检验</a><span>/</span>机会B · 取宝物</div>
- <header class="game-hero"><div class="gh-copy"><div class="gh-tags">${tag("第二位","role")}${tag("TriPeaks 换过关目标")}${tag("原PPT P15左")}</div><h1>取宝物即过关</h1><p class="gh-thesis">±1 接牌、覆盖结构、Stock 都不变；只把胜利条件从“清空 28 张”改成“取得 3 张宝物牌”。玩家第一次有了“往哪挖”的方向，也多了“省牌直取还是绕路连击”的取舍。</p>
+ <header class="game-hero"><div class="gh-copy"><div class="gh-tags">${tag("第二位","role")}${tag("TriPeaks 换过关目标")}</div><h1>取宝物即过关</h1><p class="gh-thesis">±1 接牌、覆盖结构、Stock 都不变；只把胜利条件从“清空 28 张”改成“取得 3 张宝物牌”。玩家第一次有了“往哪挖”的方向，也多了“省牌直取还是绕路连击”的取舍。</p>
  <div class="gh-switch"><a href="#idea/conveyor">A · 传送带</a><a class="active" href="#idea/treasure">B · 取宝物</a><a href="#idea/more">C · 其他</a></div></div>
  <div class="gh-data"><div class="data-strip"><b>一句话规则</b><span>宝物牌与普通牌一样按 ±1 接走；接走第 3 张宝物的瞬间立即过关，剩余牌不再要求清空。</span></div></div></header>
  ${toc([["t-view","牌阵图"],["t-spec","规则说明书"],["t-route","两条路线"],["t-param","关卡参数"],["t-risk","风险与否决"]])}
@@ -164,12 +164,12 @@ function treasurePage(){
  <tr><td>风险</td><td>连击短、金币少</td><td>Stock 不够，宝物没拿齐就失败</td></tr></tbody></table>
  <p class="sec-foot">${kind("ana")} 只有当“星级”和“金币”对玩家都有价值时，这个取舍才成立——局外必须同时需要两者。</p>`)}
  ${sec("t-param","04","LEVEL PARAMS","关卡参数","",`<table class="mini-table"><thead><tr><th>参数</th><th>作用</th><th>设计注意</th></tr></thead><tbody>
- <tr><td>宝物深度</td><td>第 1 排峰顶最深，第 3 排较浅</td><td>全在峰顶 ≈ 清台；全部暴露又过浅（原PPT备注）</td></tr>
+ <tr><td>宝物深度</td><td>第 1 排峰顶最深，第 3 排较浅</td><td>全在峰顶 ≈ 清台；全部暴露又过浅</td></tr>
  <tr><td>宝物分布</td><td>同峰 / 跨峰</td><td>跨三峰才逼出路线选择</td></tr>
  <tr><td>宝物点数</td><td>翻开后能否立即接走</td><td>与周边点数的距离决定绕路成本</td></tr>
- <tr><td>Stock / 步数上限</td><td>默认 Stock 23 张</td><td>缩减预算是加难的主旋钮（原PPT：遮挡 + 步数限制）</td></tr></tbody></table>`)}
+ <tr><td>Stock / 步数上限</td><td>默认 Stock 23 张</td><td>缩减预算是加难的主旋钮（遮挡 + 步数限制）</td></tr></tbody></table>`)}
  ${sec("t-risk","05","RISK","风险与否决","",`<div class="cost-grid">
- <div><b>完成感缺失</b><span>剩牌结束可能让人觉得“没玩完”——原PPT列为首要验证点</span></div>
+ <div><b>完成感缺失</b><span>剩牌结束可能让人觉得“没玩完”——这是首要验证点</span></div>
  <div><b>习惯性清台</b><span>若多数人取齐后仍继续清，目标变化等于没变</span></div>
  <div><b>宝物可见性</b><span>★ 标记被压住时也必须清晰可见</span></div>
  <div><b>否决线</b><span>同一关两组玩家的路线无明显差异，说明取舍不存在</span></div></div>`)}
@@ -179,12 +179,12 @@ function treasurePage(){
 /* ======================= 页面：C 其他 ======================= */
 function morePage(){
  return `<div class="classic-breadcrumb"><a href="#opportunities">机会检验</a><span>/</span>机会C · 其他思路</div>
- <header class="game-hero"><div class="gh-copy"><div class="gh-tags">${tag("候补","role")}${tag("原PPT隐藏页 P17/P18")}</div><h1>其他候选思路</h1><p class="gh-thesis">都遵守“只改一处”：改供给顺序、改匹配关系、改界面。保留在这里是为了留选项和否决理由。</p>
+ <header class="game-hero"><div class="gh-copy"><div class="gh-tags">${tag("候补","role")}</div><h1>其他候选思路</h1><p class="gh-thesis">都遵守“只改一处”：改供给顺序、改匹配关系、改界面。保留在这里是为了留选项和否决理由。</p>
  <div class="gh-switch"><a href="#idea/conveyor">A · 传送带</a><a href="#idea/treasure">B · 取宝物</a><a class="active" href="#idea/more">C · 其他</a></div></div>
  <div class="gh-data"><div class="data-strip"><b>排序原则</b><span>先看失败能否归因，再看是否只改一处。</span></div></div></header>
  ${sec("m-list","01","CANDIDATES","三个候选","",`<div class="cand-grid">
- <article><span class="overline">C1 · 改供给顺序</span><h3>一次排牌权</h3><p>每局一次，可重排 Stock 顶部 3 张。原PPT例：底牌 8、桌面 10，把 9 调到最前，少耗一张补牌。</p><div class="mini-seq"><span>原序</span>${hc("n","6")}${hc("n","9")}${hc("n","4")}<span>→</span>${hc("n","9","pick")}${hc("n","6")}${hc("n","4")}</div><ul><li>新取舍：眼前救局，还是留给后面的难点</li><li>否决：玩家看到答案就必点，说明没有取舍</li></ul></article>
- <article><span class="overline">C2 · 改匹配关系</span><h3>语义多归属</h3><p>一张词卡可进多个合法类别。原PPT例：“蝙蝠”既属哺乳动物，也属会飞的。</p><div class="mini-seq"><span>蝙蝠</span><span>→</span><em>哺乳动物 0/8</em><em>会飞的 0/6</em></div><ul><li>新取舍：认对之后，还能靠规划玩得更好</li><li>否决：多路径无法被玩家理解或计算</li></ul></article>
+ <article><span class="overline">C1 · 改供给顺序</span><h3>一次排牌权</h3><p>每局一次，可重排 Stock 顶部 3 张。例：底牌 8、桌面 10，把 9 调到最前，少耗一张补牌。</p><div class="mini-seq"><span>原序</span>${hc("n","6")}${hc("n","9")}${hc("n","4")}<span>→</span>${hc("n","9","pick")}${hc("n","6")}${hc("n","4")}</div><ul><li>新取舍：眼前救局，还是留给后面的难点</li><li>否决：玩家看到答案就必点，说明没有取舍</li></ul></article>
+ <article><span class="overline">C2 · 改匹配关系</span><h3>语义多归属</h3><p>一张词卡可进多个合法类别。例：“蝙蝠”既属哺乳动物，也属会飞的。</p><div class="mini-seq"><span>蝙蝠</span><span>→</span><em>哺乳动物 0/8</em><em>会飞的 0/6</em></div><ul><li>新取舍：认对之后，还能靠规划玩得更好</li><li>否决：多路径无法被玩家理解或计算</li></ul></article>
  <article><span class="overline">C3 · 改界面</span><h3>竖屏 TriPeaks</h3><p>为单手操作重排牌阵。属于界面变量，不算新机制，已有先例。</p><ul><li>代价：可接范围变窄，难度自然上升</li><li>仅作包装选项，不进入机制排序</li></ul></article></div>`)}
  ${sec("m-drop","02","REJECTED","已否决的思路","保留否决理由，避免重复讨论。",`<table class="mini-table"><thead><tr><th>思路</th><th>否决理由</th></tr></thead><tbody>
  <tr><td>倒计时炸弹牌</td><td>失败从“判断失误”变成“来不及”，违背失败可归因</td></tr>

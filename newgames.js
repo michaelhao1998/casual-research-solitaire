@@ -20,7 +20,7 @@ const associations={
  gp:"https://play.google.com/store/apps/details?id=com.hitappsgames.wordsolitaire&hl=en",
  thesis:"把“点数相差1”换成“它属于哪一类”：判断依据从数字变成常识，零规则门槛；但牌桌仍有遮挡、类别位有限、步数有限——知道答案，还得拿得到牌。",
  high:[["改了什么","匹配依据：±1 → 语义从属","成员卡归入它所属的类别；类别本身也是一张牌，要先占位才能开组。"],["爽点","“这个我知道”","识别正确的瞬间就是奖励，不需要先学规则；题库可以无限扩张。"],["代价","公平感取决于题目","词义、文化与翻译歧义会让失败不可归因于玩家规划。"]],
- clip:{src:"presentation/media/media10.mp4",poster:"presentation/media/poster-12-1.jpg",portrait:true,title:"第5关实录 · 原PPT P12 · 7.5秒（中文界面）",note:"看三件事：类别位上的 n/m 计数、带王冠的类别卡、左上“移动”数字。",marks:[["0–1s","第5关，移动25；顶部4个类别位，左上牌库翻出“木材”"],["1–3s","移开“住宅”后，“乾衣機”归入电器类（计数3/4）；原位置露出带王冠的“地图”"],["3–5s","翻牌库，“沙丁鱼”从翻出位直接归入鱼类（4/8）"],["5–7s","继续归类，移动降到20"]]},
+ clip:{src:"presentation/media/media10.mp4",poster:"presentation/media/poster-12-1.jpg",portrait:true,title:"第5关实录 · 7.5秒（中文界面）",note:"看三件事：类别位上的 n/m 计数、带王冠的类别卡、左上“移动”数字。",marks:[["0–1s","第5关，移动25；顶部4个类别位，左上牌库翻出“木材”"],["1–3s","移开“住宅”后，“乾衣機”归入电器类（计数3/4）；原位置露出带王冠的“地图”"],["3–5s","翻牌库，“沙丁鱼”从翻出位直接归入鱼类（4/8）"],["5–7s","继续归类，移动降到20"]]},
  spec:[
   ["牌桌","4列：上层暗牌、底层明牌（词卡或图卡）；只有明牌可操作","obs"],
   ["类别区","顶部一排类别位，每位显示“类别名 + 已收/应收”（如电器3/4、鱼类4/8）；类别位数量随关卡变化","obs"],
@@ -54,7 +54,7 @@ const makeit10={
  gp:"https://play.google.com/store/apps/details?id=com.unicostudio.makeit10&hl=en",
  thesis:"不再围着一张底牌接链，而是任取两张可用牌凑成10一起消掉；抽来的牌先进入3格暂存位——暂存位既是缓冲，也是失败压力。",
  high:[["改了什么","无基准 → 两两配对","任意两张可用牌，点数和为10即可消除；J/Q/K与同类配对。"],["爽点","心算秒懂 + 一次消两张","10以内加法零门槛，每次消除带“10”字爆点。"],["代价","暂存位与步数双上限","抽牌一次进3张，暂存位很快被占满，周转空间成为主要压力。"]],
- clip:{src:"presentation/media/media11.mp4",poster:"presentation/media/poster-12-2.jpg",portrait:true,title:"第3关实录 · 原PPT P12 · 6秒",note:"看底排明牌、底部3个暂存位、右下牌库数字与顶部Moves。",marks:[["0s","Moves 32；5列暗牌，底排明牌5、4、9、5、1；牌库19"],["1s","9+1凑10清除，上方翻出8与9"],["2–3s","5+5清除，Moves 30"],["4s","点牌库：3、3、5依次落入3个暂存位，牌库19→16"],["5s","底排7与暂存位中的3凑10清除，露出6，Moves 28"]]},
+ clip:{src:"presentation/media/media11.mp4",poster:"presentation/media/poster-12-2.jpg",portrait:true,title:"第3关实录 · 6秒",note:"看底排明牌、底部3个暂存位、右下牌库数字与顶部Moves。",marks:[["0s","Moves 32；5列暗牌，底排明牌5、4、9、5、1；牌库19"],["1s","9+1凑10清除，上方翻出8与9"],["2–3s","5+5清除，Moves 30"],["4s","点牌库：3、3、5依次落入3个暂存位，牌库19→16"],["5s","底排7与暂存位中的3凑10清除，露出6，Moves 28"]]},
  spec:[
   ["牌桌","5列：上层暗牌，每列最底一张为明牌","obs"],
   ["可用牌","各列最底明牌 + 暂存位中的牌","obs"],
@@ -83,7 +83,7 @@ const fusion={
  gp:"https://play.google.com/store/apps/details?id=com.JollifyGames.SolitaireFusion&hl=en",
  thesis:"牌不再只是被“接走”，而是会“变成新的牌”：同点两张合成高一级，并沿预先搭好的递减串连锁——先搭串是蓄力，落下关键牌是引爆。",
  high:[["改了什么","接走 → 合成产生新牌","目标从“清空”变成“做出目标点数”，牌桌在每次合成后都会变形。"],["爽点","一张牌引爆整串","4-3-2-A 落下一张A，连锁坍缩成5——多米诺式连锁。"],["代价","规则需要推断","8秒录屏只能看到结果，完整数值规则仍需长录像确认。"]],
- clip:{src:"presentation/media/media12.mp4",poster:"presentation/media/poster-13-1.jpg",portrait:true,title:"连锁合成实录 · 原PPT P13 · 8秒（竖屏）",note:"看顶部TARGET、中部一排7个槽位、下方递减牌串，以及合成后飞入目标的那张牌。",marks:[["0–1s","TARGET：5×1、10×1；中部7个槽位，两列递减串（4-3-2-A、9-8-7-6）"],["2–3s","拖动牌在槽位间调整位置"],["4s","一张A落到4-3-2-A列尾：整串连锁坍缩成一张5，+金币"],["5s","5飞入TARGET，第一个目标完成（+5金币）"],["6–7s","一张6落到9-8-7-6列尾，连锁成10，完成第二个目标"]]},
+ clip:{src:"presentation/media/media12.mp4",poster:"presentation/media/poster-13-1.jpg",portrait:true,title:"连锁合成实录 · 8秒（竖屏）",note:"看顶部TARGET、中部一排7个槽位、下方递减牌串，以及合成后飞入目标的那张牌。",marks:[["0–1s","TARGET：5×1、10×1；中部7个槽位，两列递减串（4-3-2-A、9-8-7-6）"],["2–3s","拖动牌在槽位间调整位置"],["4s","一张A落到4-3-2-A列尾：整串连锁坍缩成一张5，+金币"],["5s","5飞入TARGET，第一个目标完成（+5金币）"],["6–7s","一张6落到9-8-7-6列尾，连锁成10，完成第二个目标"]]},
  spec:[
   ["目标区","顶部TARGET：要求做出的点数与数量（录屏为5×1、10×1）","obs"],
   ["槽位","中部一排7个槽位，可放置单牌或牌串","obs"],
@@ -111,7 +111,7 @@ const mergekingdom={
  gp:"https://play.google.com/store/apps/details?id=com.solitairemanor.secrets&hl=en",
  thesis:"牌局本身仍是TriPeaks ±1；变化在“一局之后”：结算后进入一块花园棋盘，用三合一的Merge-3升级物品、修复家园——一局之后还有另一套可玩的内容。",
  high:[["改了什么","局内不动，局外加一套Merge-3","与Grand Harvest同属“局外第二系统”，但这里的局外本身是成熟玩法。"],["爽点","打完还能“整理”","三个同级合成一个高级，是另一种清屏满足。"],["代价","两套操作切换","资源是否双向回流未证；两类玩家是否同一批人待验证。"]],
- clip:{src:"presentation/media/media13.mp4",poster:"presentation/media/poster-13-2.jpg",title:"牌局结算 → 花园Merge-3 · 原PPT P13 · 15秒（横屏）",note:"看三个环节：结算宝箱与金币、Merge-3教学、花园棋盘上的合成与右下绿色按钮的数字。",marks:[["0–1s","“YOU DID IT!”结算宝箱，金币+1,049"],["2–3s","教学：“Merge three items to obtain an upgraded one!”"],["4–5s","进入花园棋盘，点击宝箱（TAP!）产出物品"],["6–14s","三个同级花卉合成高一级；右下绿色按钮显示“4”"],["15s","金币余额 6,206 → 6,306（+100，来源待核）"]]},
+ clip:{src:"presentation/media/media13.mp4",poster:"presentation/media/poster-13-2.jpg",title:"牌局结算 → 花园Merge-3 · 15秒（横屏）",note:"看三个环节：结算宝箱与金币、Merge-3教学、花园棋盘上的合成与右下绿色按钮的数字。",marks:[["0–1s","“YOU DID IT!”结算宝箱，金币+1,049"],["2–3s","教学：“Merge three items to obtain an upgraded one!”"],["4–5s","进入花园棋盘，点击宝箱（TAP!）产出物品"],["6–14s","三个同级花卉合成高一级；右下绿色按钮显示“4”"],["15s","金币余额 6,206 → 6,306（+100，来源待核）"]]},
  spec:[
   ["主局","TriPeaks：±1接牌（官方描述；本段录屏只覆盖结算）","fact"],
   ["结算","过关得宝箱与金币（录屏+1,049）","obs"],

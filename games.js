@@ -16,7 +16,7 @@ const toc=list=>`<nav class="page-toc" aria-label="本页目录">${list.map(([id
 
 /* ========== 1 · Grand Harvest ========== */
 const harvest={
- id:"harvest",name:"Solitaire Grand Harvest",studio:"Supertreat / Playtika",launch:"2017 上线 · Playtika 发行",dataId:"MS0624",role:"本期主讲 · 局外Meta代表",
+ id:"harvest",name:"Solitaire Grand Harvest",studio:"Supertreat / Playtika",launch:"2017 上线 · Playtika 发行",dataId:"MS0624",role:"重点样本 · 局外Meta代表",
  thesis:"把“再打一关”接到“农场里又有东西熟了”：多容器局外、连击产金币与音阶反馈，把资源压力消化在循环里，而不是压在单局难度上。",
  highlights:[
   {k:"主看点",t:"农场不是奖励页，是第二个循环",d:"种收、建造、宠物、相册四条线并行；牌桌产出直接变成农场动作，农场又反过来给牌桌道具。"},
@@ -24,8 +24,8 @@ const harvest={
   {k:"表现",t:"音阶即连击计数器",d:"点击音效逐级升高（1-2-3-4-5-6），玩家不用看UI就知道自己连到第几张。"}
  ],
  clips:[
-  {src:"presentation/media/media7.mp4",poster:"presentation/media/poster-08-1.jpg",title:"农场→牌桌 · 原PPT P08 · 13秒",note:"看进入关卡时的镜头推进：从农场地图直接切到牌桌，中间没有独立大厅。"},
-  {src:"media/harvest-v11.mp4",poster:"media/harvest-v11.jpg",title:"横排移动牌关卡 · 补充V11 · 12秒",note:"同一款产品里另一种牌阵：不是金字塔，而是可左右移动的横排序列。",marks:[["0–4s","牌阵为多层横排，牌只向左右两侧移动"],["4–8s","接牌后整排补位，露出下层新牌"],["8–12s","连击音阶随接牌升高"]]},
+  {src:"presentation/media/media7.mp4",poster:"presentation/media/poster-08-1.jpg",title:"农场→牌桌 · 13秒",note:"看进入关卡时的镜头推进：从农场地图直接切到牌桌，中间没有独立大厅。"},
+  {src:"media/harvest-v11.mp4",poster:"media/harvest-v11.jpg",title:"横排移动牌关卡 · 补充 · 12秒",note:"同一款产品里另一种牌阵：不是金字塔，而是可左右移动的横排序列。",marks:[["0–4s","牌阵为多层横排，牌只向左右两侧移动"],["4–8s","接牌后整排补位，露出下层新牌"],["8–12s","连击音阶随接牌升高"]]},
   {src:"media/harvest-mouse.mp4",poster:"media/harvest-mouse.jpg",title:"老鼠牌与芝士牌 · 本轮补充 · 12秒",note:"牌阵两侧的木洞里蹲着老鼠，中间可见芝士色目标牌——老鼠是“占位障碍”，不是可接牌。",marks:[["0–3s","金字塔牌阵：两侧砖洞里各有一只老鼠，中间A/K可接牌"],["3–8s","接走可接牌后老鼠位置不变，仍占住该格；被压住的牌不翻开"],["8–12s","老鼠所在格只能靠特定道具或关卡规则处理（待更完整录像确认）"]]},
   {src:"media/harvest-wild.mp4",poster:"media/harvest-wild.jpg",title:"风车/万能牌入口 · 本轮补充 · 12秒",note:"右下角“WILD”按钮是本局可用的万能牌入口，与Lv30解锁的风车道具同名不同物——两者要分开记。",marks:[["0–4s","牌桌右下出现金框WILD按钮，旁边标价，表示可用次数/消耗"],["4–8s","牌阵中K、Q、J、5、4横向排开，可接范围被压缩"],["8–12s","点击WILD后进入选牌状态（录屏到此，后续未录）"]]},
   {src:"media/harvest-farm.mp4",poster:"media/harvest-farm.jpg",title:"局外农场地图 · 本轮补充 · 12秒",note:"农场主界面：地块、作物成熟标记、建筑与底部功能入口并列——同一屏里同时存在多种“可做的事”。",marks:[["0–4s","全景农场：地块成熟度用图标标记，红色谷仓为建造入口"],["4–8s","地图可拖动，路边散落可收集物"],["8–12s","底部导航：任务、商店、相册、活动并列"]]}
@@ -72,7 +72,7 @@ const harvest={
 
 /* ========== 2 · Disney ========== */
 const disney={
- id:"disney",name:"Disney Solitaire",studio:"SuperPlay / Playtika",launch:"2023 上线 · Playtika 发行",dataId:"MS0219",role:"本期主讲 · IP与场景代表",
+ id:"disney",name:"Disney Solitaire",studio:"SuperPlay / Playtika",launch:"2023 上线 · Playtika 发行",dataId:"MS0219",role:"重点样本 · IP与场景代表",
  thesis:"把每一次通关换成一颗星，再把星星换成一段可辨认的迪士尼电影场景：IP既是买量理由，也是长期目标的内容本身。",
  highlights:[
   {k:"主看点",t:"场景复原：一星一步，六步一景",d:"Memory Lane按电影组织章节，单场景6步复原，每步只吃一颗星——进度条短、反馈密。"},
@@ -80,9 +80,9 @@ const disney={
   {k:"经济",t:"倍率与入场同升",d:"Lv90后X1/X2/X4：投入与奖励一起放大，但一关仍只得一星——用风险换速度，不换进度。"}
  ],
  clips:[
-  {src:"presentation/media/media9.mp4",poster:"presentation/media/poster-10-1.jpg",title:"场景复原与Memory Lane · 原PPT P10 · 18秒",note:"看星星如何从牌桌飞进场景：一次只推进一格。"},
-  {src:"media/disney-v09.mp4",poster:"media/disney-v09.jpg",title:"局内连击 · 补充V09 · 11秒",note:"连击条与金币结算的关系。"},
-  {src:"media/disney-v10.mp4",poster:"media/disney-v10.jpg",title:"Tinker Bell关卡与金币反馈 · 补充V10 · 12秒",note:"IP角色出现在牌桌侧，承担提示与情绪反馈，不改变规则。"}
+  {src:"presentation/media/media9.mp4",poster:"presentation/media/poster-10-1.jpg",title:"场景复原与Memory Lane · 18秒",note:"看星星如何从牌桌飞进场景：一次只推进一格。"},
+  {src:"media/disney-v09.mp4",poster:"media/disney-v09.jpg",title:"局内连击 · 补充 · 11秒",note:"连击条与金币结算的关系。"},
+  {src:"media/disney-v10.mp4",poster:"media/disney-v10.jpg",title:"Tinker Bell关卡与金币反馈 · 补充 · 12秒",note:"IP角色出现在牌桌侧，承担提示与情绪反馈，不改变规则。"}
  ],
  loop:[
   {zone:"入场",t:"Coins / Lives",d:"每小时领币，但仍持续紧张"},
@@ -120,7 +120,7 @@ const disney={
 
 /* ========== 3 · Tiki ========== */
 const tiki={
- id:"tiki",name:"Tiki Solitaire TriPeaks",studio:"Scopely（原GSN）",launch:"2011 上线 · Scopely 发行",dataId:"MS1973",role:"底稿备选 · 社交目标代表",shotMode:true,
+ id:"tiki",name:"Tiki Solitaire TriPeaks",studio:"Scopely（原GSN）",launch:"2011 上线 · Scopely 发行",dataId:"MS1973",role:"补充样本 · 社交目标代表",shotMode:true,
  thesis:"个人清牌积分自动进入俱乐部目标；Volcano的Tribute还会反过来改变“下一关去打哪一关”——社交不是聊天，而是目标结构。",
  highlights:[
   {k:"主看点",t:"俱乐部目标：个人操作变成共同进度",d:"清牌得分计入Club Points，Perks按俱乐部等级发放；Golden Tribute=5个普通Tribute。"},
@@ -170,7 +170,7 @@ const tiki={
 
 /* ========== 4 · Fairway ========== */
 const fairway={
- id:"fairway",name:"Fairway Solitaire",studio:"Big Fish / BFG",launch:"2007 起多版本 · 现由Big Fish运营",dataId:"MS3075",role:"底稿备选 · 成绩单位代表",shotMode:true,
+ id:"fairway",name:"Fairway Solitaire",studio:"Big Fish / BFG",launch:"2007 起多版本 · 现由Big Fish运营",dataId:"MS3075",role:"补充样本 · 成绩单位代表",shotMode:true,
  thesis:"同样±1接牌，但按“一洞”结算、按“整场”评价：一洞没清完也能进下一洞，失败容忍度被重新组织。",
  highlights:[
   {k:"主看点",t:"成绩单位从“关”换成“洞”",d:"一洞=一局，par=标准杆；没清完不等于失败，只是这一洞超杆。"},
@@ -180,7 +180,7 @@ const fairway={
  shotMode:true,
  shots:[],
  clips:[],
- noShot:"Fairway 目前没有同事实机截图与录屏，本页以文字与规则结构为主；配图待补（V14待录：开始一洞→用球杆→残牌结束→下一洞→整场成绩）。",
+ noShot:"Fairway 目前没有同事实机截图与录屏，本页以文字与规则结构为主；配图待补（待补录：开始一洞→用球杆→残牌结束→下一洞→整场成绩）。",
  loop:[
   {zone:"入场",t:"选球场",d:"巡回赛结构，按球场组织洞"},
   {zone:"局内",t:"±1 + 球杆 + 地形",d:"rough/sand/rain改变可接范围"},
@@ -220,7 +220,7 @@ function page(id){
  const g=ALL[id];if(!g)return null;
  const nameOf={harvest:"Grand Harvest",candy:"Candy",disney:"Disney",tiki:"Tiki",fairway:"Fairway"};
  const nav=[["harvest","Grand Harvest"],["candy","Candy"],["disney","Disney"],["tiki","Tiki"],["fairway","Fairway"]];
- const sw=nav.map(([k,n])=>`<a class="${k===id?"active":""}" href="#game/${k}">${n}${["tiki","fairway"].includes(k)?"<small>备选</small>":""}</a>`).join("");
+ const sw=nav.map(([k,n])=>`<a class="${k===id?"active":""}" href="#game/${k}">${n}${["tiki","fairway"].includes(k)?"<small>补充</small>":""}</a>`).join("");
  const L=[["g-top","一句话看懂"],["g-see","实机素材"],["g-loop","一局与下一局"],["g-mech","机制拆解"],["g-level","关卡与道具"],["g-meta","局外Meta"],["g-eco","经济与节奏"],["g-sense","美术·动效·音效"],["g-verdict","分析师判断"]];
  const next={harvest:["candy","Candy","Candy把“存与放”做成一个按钮。"],candy:["disney","Disney","Disney把成果做成可辨认的电影场景。"],disney:["tiki","Tiki","Tiki把个人分数变成俱乐部进度。"],tiki:["fairway","Fairway","Fairway把“关”换成“洞”，失败连续化。"],fairway:["harvest","Grand Harvest","回到Harvest：局外循环最完整的样本。"]}[id];
  return `<div class="classic-breadcrumb"><a href="#products">产品拆解</a><span>/</span>${esc(g.name)}</div>
