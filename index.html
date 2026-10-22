@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="休闲玩法研究库：沿规则、产品、变化与机会理解Solitaire，按产品、指标和证据深查。S0本地只读快照。">
+<title>休闲玩法研究库 · Solitaire</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="visual.css">
+<link rel="stylesheet" href="classic.css">
+<link rel="stylesheet" href="deep.css">
+<script defer src="data.js"></script>
+<script defer src="content.js"></script>
+<script defer src="visual.js"></script>
+<script defer src="classic.js"></script>
+<script defer src="dashboard.js"></script>
+<script defer src="deep.js"></script>
+<script defer src="games.js"></script>
+<script defer src="ideas.js"></script>
+<script defer src="newgames.js"></script>
+<script defer src="app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳至正文</a>
+<div class="nav-mask" id="navMask"></div>
+<aside class="sidebar" id="sidebar" aria-label="研究库导航">
+ <a class="brand" href="#overview" aria-label="研究库首页"><span class="brand-symbol">R<span>×</span></span><span>玩法研究库<small>CASUAL RESEARCH</small></span></a>
+ <div class="library-select"><span class="mono overline">当前专题</span><strong>Solitaire <span class="chip tiny">第 01 期</span></strong><small>单人纸牌与卡片谜题</small></div>
+ <nav id="navigation">
+  <p class="nav-heading">研究阅读</p>
+  <a class="nav-link" data-route="overview" href="#overview"><span class="nav-icon">◈</span>专题概览</a>
+  <a class="nav-link data-link" data-route="market" href="#market"><span class="nav-icon">▥</span>数据看板<span class="nav-count">167</span></a>
+  <p class="nav-heading">四章学习路径</p>
+  <a class="nav-link" data-route="rules" href="#rules"><span class="nav-number">01</span>规则与乐趣</a>
+  <div class="classic-nav-sub"><a href="#classic/klondike" data-rule-nav="klondike">Klondike · 经典纸牌</a><a href="#classic/freecell" data-rule-nav="freecell">FreeCell · 空当接龙</a><a href="#classic/spider" data-rule-nav="spider">Spider · 蜘蛛纸牌</a><a href="#classic/pyramid" data-rule-nav="pyramid">Pyramid · 金字塔</a><a href="#classic/tripeaks" data-rule-nav="tripeaks" class="nav-new">TriPeaks · 三峰 <em>移动端主流</em></a><a href="#glossary" data-rule-nav="glossary">专业术语</a></div>
+  <a class="nav-link" data-route="products" href="#products"><span class="nav-number">02</span>产品拆解</a>
+  <div class="classic-nav-sub"><a href="#game/harvest" data-sub="game/harvest">Grand Harvest</a><a href="#game/candy" data-sub="game/candy">Candy Crush <em>含Hold深拆</em></a><a href="#game/disney" data-sub="game/disney">Disney</a><a href="#game/tiki" data-sub="game/tiki">Tiki <em>备选</em></a><a href="#game/fairway" data-sub="game/fairway">Fairway <em>备选</em></a><a href="#compare">同轴对比</a></div>
+  <a class="nav-link" data-route="changes" href="#changes"><span class="nav-number">03</span>新品变化</a>
+  <div class="classic-nav-sub"><a href="#new/associations" data-sub="new/associations">Associations Journey</a><a href="#new/makeit10" data-sub="new/makeit10">Make It 10</a><a href="#new/fusion" data-sub="new/fusion">Solitaire Fusion</a><a href="#new/mergekingdom" data-sub="new/mergekingdom">Merge Kingdom</a><a href="#new/others" data-sub="new/others">其他新品名单</a></div>
+  <a class="nav-link" data-route="opportunities" href="#opportunities"><span class="nav-number">04</span>机会检验</a>
+  <div class="classic-nav-sub"><a href="#idea/conveyor" data-sub="idea/conveyor">A · 传送带 × ±1</a><a href="#idea/treasure" data-sub="idea/treasure">B · 取宝物过关</a><a href="#idea/more" data-sub="idea/more">C · 其他思路</a></div>
+  <p class="nav-heading">查证</p>
+  <a class="nav-link" data-route="sources" href="#sources"><span class="nav-icon">≡</span>证据与版本</a>
+  <a class="nav-link" href="presentation/index.html"><span class="nav-icon">▷</span>原PPT与视频<span class="nav-count">39</span></a>
+ </nav>
+ <div class="sidebar-bottom"><div><span class="status-dot"></span>只读研究快照 <span class="mono">S0 · v4</span></div><p>内容基线 v10 · 最终 PPT 四章<br>市场数据截至 2026-09</p><details class="future-topics"><summary>后续赛道</summary><span>Sort / Block / Merge / 三消</span><small>尚未导入；不显示占位报告</small></details></div>
+</aside>
+<div class="workspace">
+<header class="topbar">
+ <div class="topbar-left"><button class="icon-btn menu-toggle" id="menuToggle" aria-label="打开导航" aria-expanded="false">☰</button><span class="breadcrumb">研究库 <span>/</span> Solitaire <span>/</span> <b id="breadcrumbPage">专题概览</b></span></div>
+ <div class="topbar-right"><button class="search-trigger" id="openSearch"><span>⌕</span> 搜索产品、机制或问题 <kbd>/</kbd></button><span class="version-tag">v4 预览</span></div>
+</header>
+<main id="main" tabindex="-1" class="page"></main>
+<footer class="footer"><span>研究：michael <span class="divider">/</span> 阅读基线：v10 + P01—P16</span><button class="text-button" id="footerBoundary">查看数据与发布边界 ↗</button></footer>
+</div>
+<dialog id="searchDialog" class="search-dialog" aria-labelledby="searchTitle"><div class="dialog-head"><h2 id="searchTitle">在本期研究中搜索</h2><button class="icon-btn" data-close="searchDialog" aria-label="关闭搜索">×</button></div><label class="global-search"><span>⌕</span><input id="globalSearch" type="search" placeholder="试试 Hold、Fairway、语义归类、局外合成…" autocomplete="off" aria-label="搜索研究内容"></label><div id="searchResults" class="search-results"></div><p class="help">搜索当前快照内的产品、学习单元与来源；不搜索未导入的原始附件。</p></dialog>
+<dialog id="detailDialog" class="detail-dialog" aria-labelledby="detailTitle"><div class="dialog-head"><h2 id="detailTitle"></h2><button class="icon-btn" data-close="detailDialog" aria-label="关闭详情">×</button></div><div id="detailBody" class="detail-body"></div></dialog>
+<div id="toast" role="status" class="toast"></div>
+<noscript><p>此研究库需要启用 JavaScript 才能使用筛选、排序与分层阅读。</p></noscript>
+</body>
+</html>
